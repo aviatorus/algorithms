@@ -37,9 +37,9 @@ function bubbleSort (arr) {
 }
 ```
 
-Complexity of Bubble Sort is ** O(n2) **
+Complexity of Bubble Sort is **O(n2)**
 
-Space complexity for Bubble Sort is ** O(1) **
+Space complexity for Bubble Sort is **O(1)**
 
 Advantage:
 * simplicity
