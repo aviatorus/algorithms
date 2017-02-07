@@ -1,4 +1,4 @@
-###### Bubble sort implementation in JavaScript
+### Bubble sort implementation in JavaScript
 
 ```
 function bubbleSort(arr){
