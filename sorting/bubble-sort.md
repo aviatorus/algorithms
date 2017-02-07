@@ -1,4 +1,4 @@
-Bubble sort implementation in JavaScript
+###### Bubble sort implementation in JavaScript
 
 ```
 function bubbleSort(arr){
@@ -36,3 +36,10 @@ function bubbleSort (arr) {
   return arr
 }
 ```
+
+Complexity of Bubble Sort is ** O(n2) **
+
+Space complexity for Bubble Sort is ** O(1) **
+
+Advantage:
+* simplicity
