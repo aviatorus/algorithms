@@ -15,6 +15,7 @@ function sum(arr){
   return Math.max(exc,inc)
 }
 sum(arr)
+
 ```
 
 improvement: no need to start from index 0;
@@ -31,4 +32,5 @@ function sum(arr){
   return Math.max(exc,inc)
 }
 sum(arr)
+
 ```
