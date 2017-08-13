@@ -80,10 +80,9 @@ function isPalindrome(s) {
 }
 
 function longestPalind(s){
-	  maxp = '';
-	
+	maxp = '';	
   for(var i=0; i < s.length; i++) {
-	  var subs = s.substr(i, s.length);
+  	var subs = s.substr(i, s.length);
   	for(var j=subs.length; j>=0; j--) {
   	  var sub_subs = subs.substr(0, j);
       if (sub_subs.length > maxp.length && isPalindrome(sub_subs)) {
