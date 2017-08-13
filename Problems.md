@@ -123,3 +123,40 @@ function sumFind(arr,sum){
 
 sumFind(arr,n)
 ```
+
+### Anagram Substring Search (Or Search for all permutations)
+
+```
+var str = "BACDGABCDA";
+var pat = "ABCD";
+
+function createFr(text){
+  var fre = {};
+  for (var i=0; i<text.length; i++){
+    if (fre[text[i]]) {
+      fre[text[i]]++
+    } else {
+      fre[text[i]] = 1;
+    }
+  }
+  return fre;
+}
+
+function anagram(str,pat){
+  var arr = [];
+  var patFre = createFr(pat);
+  for (var i=0; i<str.length; i++){
+    var strFre = createFr(str.slice(i, pat.length+i));
+    console.log(strFre)
+    var isAnagram = Object.keys(patFre).every(function(item){
+      return patFre[item] === strFre[item];
+    });
+    if (isAnagram){
+      arr.push(i)
+    }
+  }
+  return arr
+}
+
+anagram(str,pat)
+```
