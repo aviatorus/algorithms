@@ -69,3 +69,34 @@ var sample_data = [0, 1, 100, 99, 0, 10, 90, 30, 55, 33, 55, 75, 50, 51,
         return results
     }
 ```
+
+
+### Longest Palindrome
+
+```
+function isPalindrome(s) {
+  var rev = s.split("").reverse().join("");
+  return s == rev;
+}
+
+function longestPalind(s){
+	  maxp = '';
+	
+  for(var i=0; i < s.length; i++) {
+	  var subs = s.substr(i, s.length);
+  	for(var j=subs.length; j>=0; j--) {
+  	  var sub_subs = subs.substr(0, j);
+      if (sub_subs.length > maxp.length && isPalindrome(sub_subs)) {
+    		if (sub_subs.length > maxp.length) {
+    			maxp = sub_subs;
+    		}
+	    }
+    }
+  }
+  return maxp;
+}
+
+console.log(longestPalind("abcxyzyxabcdaaa"));
+
+// xyzyx
+```
