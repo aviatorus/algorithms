@@ -1,0 +1,34 @@
+### Maximum Sum Subsequence Non-Adjacent
+
+```
+var arr = [5,5,10,100,10,5];
+// 110 
+
+function sum(arr){
+  var inc = 0;
+  var exc = 0;
+  for (var i=0; i<arr.length;i++){
+    var incNew = exc + arr[i];
+    exc = Math.max(exc, inc);
+    inc = incNew
+  }
+  return Math.max(exc,inc)
+}
+sum(arr)
+```
+
+improvement: no need to start from index 0;
+
+```
+function sum(arr){
+  var inc = arr[1];
+  var exc = arr[0];
+  for (var i=2; i<arr.length;i++){
+    var incNew = exc + arr[i];
+    exc = Math.max(exc, inc);
+    inc = incNew
+  }
+  return Math.max(exc,inc)
+}
+sum(arr)
+```
