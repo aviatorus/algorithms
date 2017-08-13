@@ -99,3 +99,27 @@ console.log(longestPalind("abcxyzyxabcdaaa"));
 
 // xyzyx
 ```
+
+### Given an array of non-negative numbers, find continuous subarray with sum to S.
+
+
+```
+var arr = [1, 4, 20, 3, 10, 5], n = 33;
+
+function sumFind(arr,sum){
+  var curr_sum = 0;
+  var start =0;
+  for (var i=0; i<arr.length; i++){
+    while(curr_sum > sum){
+      curr_sum = curr_sum - arr[start];
+      start++;
+    }
+    if(curr_sum===sum){
+      return {start: start, end: i-1}
+    }
+    curr_sum += arr[i]
+  }
+}
+
+sumFind(arr,n)
+```
