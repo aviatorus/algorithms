@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div id="root1">
+    <div>
+      <div></div>
+    </div>
+    <div>
+      <div id="node1"></div>
+      <div></div>
+    </div>
+  </div>
+
+  <div id="root2">
+    <div>
+      <div></div>
+    </div>
+    <div>
+      <div id="node2"></div>
+      <div></div>
+    </div>
+  </div>
+
+
+  <script>
+
+  const root1 = document.getElementById('root1');
+  const root2 = document.getElementById('root2');
+  const node1 = document.getElementById('node1');
+  const node2 = document.getElementById('node2');
+
+  // This function returns an array of indices from given node to the root
+  const getPath = (root, node) => {
+    const path = [];
+    let current = node;
+    while (current !== root && current && current.parentNode) {
+      const index = [...current.parentNode.childNodes].indexOf(current);
+      path.push(index);
+      current = current.parentNode;
+    }
+    return path
+  };
+
+  // Popping all values from the array of indices we go to the symmetrical node
+  const getNodeByPath = (path, root) =>{
+    let current = root;
+    while(path.length) {
+      current = [...current.childNodes][path.pop()]
+    }
+    return current;
+  };
+
+
+  const findSymmetryDom = (root1, root2, node1) => {
+    const path = getPath(root1, node1);
+    return getNodeByPath(path, root2)
+  };
+
+  const nodeX = findSymmetryDom(root1, root2, node1);
+
+  console.log(nodeX === node2)
+
+</script>
+</body>
+</html>
